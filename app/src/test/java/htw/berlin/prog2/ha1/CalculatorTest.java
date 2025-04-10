@@ -109,5 +109,22 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
+    // Teilaufgabe 2
+    @Test
+    @DisplayName("should the last operation (including the last operand) be applied again to the current screen content, the result will be displayed directly.")
+    void testInterimResult() {
+        Calculator calc = new Calculator();
+
+        calc.pressDigitKey(5);
+        calc.pressBinaryOperationKey("+");
+        calc.pressDigitKey(2);
+        calc.pressBinaryOperationKey("+");
+
+        String expected = "7";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
+
 }
 
